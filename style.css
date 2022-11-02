@@ -1,0 +1,286 @@
+:root {
+  --secondary-color: #344054;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  height: 100vh;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: #5429ff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.container {
+  width: 100%;
+  max-width: 1440px;
+  height: 100%;
+  max-height: 960px;
+  display: flex;
+}
+
+.container > div {
+  flex: 1;
+}
+
+.left-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+
+.wrapper {
+  margin: auto;
+}
+
+.wrapper .logo {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  gap: 8px;
+}
+
+.wrapper .logo span {
+  padding-bottom: 8px;
+}
+
+.wrapper .head {
+  margin-bottom: 4rem;
+}
+
+.wrapper .head h1 {
+  font-size: 40px;
+  color: var(--secondary-color);
+  margin-bottom: 6px;
+}
+
+.wrapper .head p {
+  color: #667085;
+}
+
+.wrapper .form {
+  width: 360px;
+}
+
+.wrapper .form label {
+  display: block;
+  font-size: 14px;
+  color: var(--secondary-color);
+  margin-bottom: 8px;
+}
+
+.wrapper .form-control {
+  display: block;
+  color: #667085;
+  font-size: 1rem;
+  width: 100%;
+  padding: 12px;
+  padding-right: 40px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+#password::placeholder {
+  font-size: 38px;
+  position: relative;
+  top: -2px;
+}
+
+.wrapper .form-grp {
+  position: relative;
+}
+
+.form-grp img {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+}
+
+#dlt-email,
+#hide-passwd {
+  cursor: pointer;
+}
+
+#dlt-email:active,
+#hide-passwd:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.form-addon {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.form input[type='checkbox'] {
+  border-radius: 4px;
+  border: 1px solid #d0d5dd;
+  background: #d0d5dd;
+  outline: 0;
+}
+
+#remember + label {
+  margin: 0;
+  margin-left: 8px;
+  font-size: 14px;
+  color: var(--secondary-color);
+  font-weight: 500;
+}
+
+#reset-passwd {
+  margin-left: auto;
+}
+
+.wrapper .btn {
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 0;
+  outline: 0;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.wrapper .btn__email {
+  background: #5429ff;
+  color: #fff;
+}
+
+.btn__email:hover {
+  opacity: 0.85;
+}
+
+.wrapper .btn__google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--secondary-color);
+  background: #fff;
+  border: 1px solid #d0d5dd;
+}
+
+.btn__google:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.btn__email:active,
+.btn__google:active {
+  transform: scale(0.98);
+}
+
+.wrapper #sign-up {
+  text-align: center;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 24px;
+}
+
+.right-side {
+  border-radius: 40px;
+  background: #cbcce8;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.right-side img {
+  display: block;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1200px) {
+  body {
+    padding: 1rem;
+  }
+  .container {
+    height: 80%;
+  }
+  .wrapper .logo {
+    left: 10%;
+  }
+  .wrapper .form {
+    width: 320px;
+  }
+  .right-side {
+    border-radius: 20px;
+    height: 90%;
+    margin: 0 auto 10% auto;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .container {
+    height: 70%;
+    gap: 1rem;
+  }
+  .left-side {
+    height: 90%;
+  }
+  .right-side {
+    border-radius: 20px;
+    height: 90%;
+    margin: 0 auto 5% auto;
+  }
+  .wrapper .logo {
+    left: 0;
+    top: -50px;
+  }
+  .wrapper .form {
+    width: 280px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    gap: 0;
+  }
+  .left-side {
+    padding-top: 8rem;
+  }
+  .wrapper .form {
+    width: 100%;
+  }
+  .wrapper .logo {
+    top: 0;
+    flex-direction: column;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .wrapper .head h1 {
+    font-size: 32px;
+  }
+  .wrapper .head p {
+    font-size: 14px;
+  }
+  .right-side {
+    display: none;
+  }
+}
