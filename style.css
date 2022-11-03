@@ -15,6 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 a {
@@ -200,14 +201,26 @@ a {
 .right-side {
   border-radius: 40px;
   background: #cbcce8;
+  padding: 1rem;
   display: grid;
   place-items: center;
-  padding: 1rem;
+}
+
+.right-side .inner {
+  width: 100%;
+  position: relative;
+}
+
+.right-side .aspect-ratio {
+  padding-top: 86%;
 }
 
 .right-side img {
   display: block;
+  position: absolute;
+  inset: 0;
   width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 1200px) {
@@ -257,22 +270,29 @@ a {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    padding: 0;
+  }
   .container {
     width: 100%;
     height: 100%;
     gap: 0;
   }
   .left-side {
-    padding-top: 8rem;
+    height: 100vh;
+    width: 100%;
+    padding: 0 2rem 2rem 2rem;
+  }
+  .wrapper {
+    margin: 0;
   }
   .wrapper .form {
     width: 100%;
   }
   .wrapper .logo {
-    top: 0;
     flex-direction: column;
-    left: 50%;
-    transform: translateX(-50%);
+    position: static;
+    margin-bottom: 2rem;
   }
   .wrapper .head h1 {
     font-size: 32px;
